@@ -7,9 +7,9 @@ env:
   - CGO_ENABLED=1
 before:
   hooks:
-    - go mod download
     - chmod +x ./scripts/install-fuse.sh
     - ./scripts/install-fuse.sh
+    - go mod download
 builds:
   - id: fgt-darwin-amd64
     main: .
