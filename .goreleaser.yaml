@@ -11,7 +11,7 @@ before:
     - chmod +x ./scripts/install-fuse.sh
     - ./scripts/install-fuse.sh
 builds:
-  - id: dfs-darwin-amd64
+  - id: fgt-darwin-amd64
     main: .
     binary: fgt
     goos:
@@ -26,7 +26,7 @@ builds:
       - -trimpath
     ldflags:
       - -s -w
-  - id: dfs-darwin-arm64
+  - id: fgt-darwin-arm64
     main: .
     binary: fgt
     goos:
@@ -41,8 +41,8 @@ builds:
       - -trimpath
     ldflags:
       - -s -w
-  - id: dfs-linux-amd64
-    main: ./cmd/dfs
+  - id: fgt-linux-amd64
+    main: .
     binary: fgt
     goos:
       - linux
@@ -56,7 +56,7 @@ builds:
       - -trimpath
     ldflags:
       - -s -w
-  - id: dfs-linux-arm64
+  - id: fgt-linux-arm64
     main: .
     binary: fgt
     goos:
@@ -71,7 +71,7 @@ builds:
       - -trimpath
     ldflags:
       - -s -w
-  - id: dfs-windows-amd64
+  - id: fgt-windows-amd64
     main: .
     binary: fgt
     goos:
