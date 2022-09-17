@@ -5,13 +5,14 @@ release:
 env:
   - GO111MODULE=on
   - CGO_ENABLED=1
-before:
-  hooks:
-    - chmod +x ./scripts/install-fuse.sh
-    - ./scripts/install-fuse.sh
-    - go mod download
+
 builds:
   - id: fgt-darwin-amd64
+    hooks:
+      pre:
+        - chmod +x ./scripts/install-fuse.sh
+        - ./scripts/install-fuse.sh
+        -  go mod download
     main: .
     binary: fgt
     goos:
@@ -27,6 +28,11 @@ builds:
     ldflags:
       - -s -w
   - id: fgt-darwin-arm64
+    hooks:
+      pre:
+        - chmod +x ./scripts/install-fuse.sh
+        - ./scripts/install-fuse.sh
+        - go mod download
     main: .
     binary: fgt
     goos:
@@ -42,6 +48,11 @@ builds:
     ldflags:
       - -s -w
   - id: fgt-linux-amd64
+    hooks:
+      pre:
+        - chmod +x ./scripts/install-fuse.sh
+        - ./scripts/install-fuse.sh
+        - go mod download
     main: .
     binary: fgt
     goos:
@@ -57,6 +68,11 @@ builds:
     ldflags:
       - -s -w
   - id: fgt-linux-arm64
+    hooks:
+      pre:
+        - chmod +x ./scripts/install-fuse.sh
+        - ./scripts/install-fuse.sh
+        - go mod download
     main: .
     binary: fgt
     goos:
@@ -72,6 +88,11 @@ builds:
     ldflags:
       - -s -w
   - id: fgt-windows-amd64
+    hooks:
+      pre:
+        - chmod +x ./scripts/install-fuse.sh
+        - ./scripts/install-fuse.sh
+        - go mod download
     main: .
     binary: fgt
     goos:
