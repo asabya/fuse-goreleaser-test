@@ -8,6 +8,7 @@ env:
 before:
   hooks:
     - go mod download
+    - chmod +x ./scripts/install-fuse.sh
     - ./scripts/install-fuse.sh
 builds:
   - id: dfs-darwin-amd64
